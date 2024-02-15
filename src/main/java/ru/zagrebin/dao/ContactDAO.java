@@ -6,7 +6,7 @@ public interface ContactDAO {
 
     List<Contact> index();
 
-    Contact searchByName(String name);
+    List<Contact> searchByName(String name);
 
     void save(Contact contact);
 

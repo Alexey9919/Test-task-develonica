@@ -22,8 +22,8 @@ public class ContactDAOImpl implements ContactDAO {
     }
 
     //Поиск контактов по имени
-    public Contact searchByName(String name) {
-        return contacts.stream().filter(contact -> contact.getFirstName().equals(name)).findAny().orElse(null);
+    public List<Contact> searchByName(String name) {
+        return contacts.stream().filter(contact -> contact.getFirstName().equals(name)).toList();
     }
 
     //Сохранение контакта

@@ -47,11 +47,10 @@ public class Scenarios {
     void searchContact() {
         Scanner searchScanner = new Scanner(System.in);
         System.out.println("Введите имя для поиска: ");
-        Contact contact = contactDAOImpl.searchByName(searchScanner.nextLine());
-        if(contact == null)
-            System.out.println("Ничего не найдено");
-        else
-            System.out.println(contact);
+            List<Contact> contacts = contactDAOImpl.searchByName(searchScanner.nextLine());
+            for(Contact contact : contacts) {
+                System.out.println(contact);
+            }
     }
 
     //Сценарий удаления контакта
